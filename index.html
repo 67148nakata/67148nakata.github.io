@@ -1,16 +1,68 @@
-import React from 'react';
+<style>
+.container { background-color: #fff; display: flex; flex-direction: column; overflow: hidden; padding-top: 20px; }
+.content-wrapper { display: flex; flex-direction: column; padding: 0 47px; width: 100%; }
+.image-row { display: flex; gap: 20px; }
+.small-image-wrapper { width: 15%; }
+.small-image { aspect-ratio: 1.19; object-fit: contain; object-position: center; width: 209px; margin-top: 19px; max-width: 100%; }
+.large-image-wrapper { width: 85%; }
+.large-image { aspect-ratio: 4.44; object-fit: contain; object-position: center; width: 100%; }
+.book-description { color: #000; align-self: center; margin-top: 59px; font: 400 24px Inter, sans-serif; }
+.swimming-section { align-self: center; margin-top: 25px; width: 100%; max-width: 1388px; }
+.swimming-content { display: flex; gap: 20px; }
+.swimming-text { display: flex; flex-grow: 1; flex-direction: column; font-family: Inter, sans-serif; color: #000; font-weight: 400; margin: 58px -277px 0 0; }
+.swimming-description { font-size: 36px; align-self: flex-end; }
+.swimming-highlight { background-color: #7aa6dc; border-radius: 50%; margin-top: 16px; width: 512px; max-width: 100%; font-size: 48px; padding: 74px 70px 180px; }
+.swimming-image-wrapper { width: 50%; }
+.swimming-image { aspect-ratio: 1.36; object-fit: contain; object-position: center; width: 100%; }
 
-const HobbyImage: React.FC = () => {
-  return (
-    <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-      <img 
-        loading="lazy" 
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/69fce15be42ac761b79cef742044a4ff8cc32cf2b1df31bc73227d956972bbbc?placeholderIfAbsent=true&apiKey=53689216cefa478a9c1c82ff863818fe" 
-        alt="Hobby illustration" 
-        className="object-contain w-full aspect-[1.36] max-md:max-w-full" 
-      />
+@media (max-width: 991px) {
+  .content-wrapper { max-width: 100%; padding: 0 20px; }
+  .image-row { flex-direction: column; align-items: stretch; gap: 0; }
+  .small-image-wrapper, .large-image-wrapper { width: 100%; }
+  .small-image { margin-top: 20px; }
+  .large-image { max-width: 100%; }
+  .book-description { max-width: 100%; margin-top: 40px; }
+  .swimming-section { max-width: 100%; }
+  .swimming-content { flex-direction: column; align-items: stretch; gap: 0; }
+  .swimming-text { max-width: 100%; margin-top: 40px; }
+  .swimming-description { max-width: 100%; }
+  .swimming-highlight { font-size: 40px; padding: 0 20px 110px; }
+  .swimming-image-wrapper { width: 100%; }
+  .swimming-image { max-width: 100%; }
+}
+</style>
+
+<section class="container">
+  <div class="content-wrapper">
+    <div class="image-row">
+      <div class="small-image-wrapper">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1631ff6f899ca3c5fc7a60c36b6b8076ecd4fb680d6b194e9f30cf3ad414f617?placeholderIfAbsent=true&apiKey=53689216cefa478a9c1c82ff863818fe" class="small-image" alt="Small decorative image" />
+      </div>
+      <div class="large-image-wrapper">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2bf6b491fd5a2bdfa6cd781fb9cfae9b586b1ff0accdbc098e223432711532ff?placeholderIfAbsent=true&apiKey=53689216cefa478a9c1c82ff863818fe" class="large-image" alt="Large decorative image" />
+      </div>
     </div>
-  );
-};
+    <p class="book-description">僕が気に入っている本は、「ブレイブ・ストーリー」や「ブランケット・キャッツ」、「クラスメイツ」などです。</p>
+  </div>
+  <div class="swimming-section">
+    <div class="swimming-content">
+      <div class="swimming-text">
+        <p class="swimming-description">
+          水泳は中学に入ってから始めているが、<br />
+          さぼらずに部活に行っているので来年には<br />
+          たくさんの大会にでれるようにタイムを<br />
+          縮めるために自主練も頑張ろうと考えている
+        </p>
+        <div class="swimming-highlight">
+          <br />
+          水泳は<br />
+          ターン楽しい
+        </div>
+      </div>
+      <div class="swimming-image-wrapper">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/69fce15be42ac761b79cef742044a4ff8cc32cf2b1df31bc73227d956972bbbc?placeholderIfAbsent=true&apiKey=53689216cefa478a9c1c82ff863818fe" class="swimming-image" alt="Swimming related image" />
+      </div>
+    </div>
+  </div>
+</section>
 
-export default HobbyImage;
